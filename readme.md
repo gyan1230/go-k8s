@@ -45,3 +45,13 @@ $ kubectl port-forward go-webapp-69b45499fb-7fh87 8080:8080
 now interact with the Pod on the forwarded port:
 
 $ curl localhost:8080/home
+
+Creating a Kubernetes Service
+
+The port-forward command is good for testing the pods directly. But in production, we want to expose the pod using services.
+
+The level of access the service provides to the set of pods depends on the service type which can be:
+
+ClusterIP: Internal only.
+NodePort: Gives each node an external IP that’s accessible from outside the cluster and also opens a Port. A kube-proxy component that runs on each node of the Kubernetes cluster listens for incoming traffic on the port and forwards them to the selected pods in a round-robin fashion.
+LoadBalancer: Adds a load balancer from the cloud provider which forwards traffic from the service to the nodes within it.

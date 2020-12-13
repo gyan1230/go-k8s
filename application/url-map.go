@@ -8,7 +8,7 @@ import (
 
 func mapurls() {
 	fmt.Println("url mapping...")
-	router.GET("/home", controller.Home)
+	router.GET("/", controller.Home)
 	router.GET("/readiness", controller.ReadinessHandler)
 	router.GET("/health", controller.HealthHandler)
 

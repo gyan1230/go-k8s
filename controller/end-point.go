@@ -1,14 +1,19 @@
 package controller
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
 
+var count int
+
 //Home :
 func Home(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{"status": "In Home"})
+	count++
+	v := fmt.Sprintf("no is %d", count)
+	c.JSON(http.StatusOK, gin.H{"Visitor": v})
 }
 
 //HealthHandler :

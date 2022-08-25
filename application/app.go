@@ -19,11 +19,11 @@ func init() {
 	router = gin.Default()
 }
 
-//Start :
+// Start :
 func Start() {
 	mapurls()
 	srv := &http.Server{
-		Addr:    ":8080",
+		Addr:    ":8000",
 		Handler: router,
 	}
 
